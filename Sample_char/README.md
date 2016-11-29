@@ -7,230 +7,214 @@ Tomás Ruiz-Lara
 # TABLES
 ***************************************
 
-## NED:
-
-I use the tool to Build Data Table from Input List (Near Position, Cross-Matching option). In the query I include all the information I consider could be of interest. You can find two different tables:
-
-### NED_notes.csv
-
- In this table I look for all the objects within a 10'' radius with respect to the original coordinates of each object. In this table I show some notes, aspects regarding the search (separation of each object from the original coordinates), the object name (I need this infor for the Hyperleda search) and J2000 coordinates. In addition I have done a cross-match with the "amusing name" (the name according to the table you sent me). All the columns are as follows:
-
-Row_1 --> Just a number identifying the row.
-
-Notes regarding Input Position --> Notes from NED
-
-Input Position (RA) --> Input Position (RA) from AMUSING table
-
-Input Position (DEC) --> Input Position (DEC) from AMUSING table
-
-Sep ('') --> Separation in arcsecs from this particular entry to the input position.
-
-Essential Note --> Notes from NED
-
-Object Name --> Object name according to NED
-
-Amusing Name --> Object name according to AMUSING table
-
-amusing redshift --> Redshift according to AMUSING table
-
-RA (J2000) --> RA according to NED to this particular entry
-
-Dec (J2000) --> DEC according to NED to this particular entry
-
-Row_1a --> Just a number identifying the row.
-
-### NED_detailed_info.csv
-
- In this table I show essencially the same table as before (same number of rows) but in this case I extract all the information from NED that I consider interesting (galactic extinction, object type, redshift, magnitude, major and minor diameters, morphology, and distance). All the columns are as follows:
-
-Row --> Just a number identifying the row.
-
-Object Name  --> NED name
-
-RA (J2000)  -->  RA from NED
-
-Dec (J2000)  -->  DEC from NED
-
-Galactic Extinction SDSS-u (Schlafly etal. 2011) [mag]  -->  Galactic Extinction SDSS-u (Schlafly etal. 2011) [mag] from NED
-
-Galactic Extinction SDSS-g (Schlafly etal. 2011) [mag]  -->  Galactic Extinction SDSS-g (Schlafly etal. 2011) [mag] from NED
-
-Galactic Extinction SDSS-r (Schlafly etal. 2011) [mag]  -->  Galactic Extinction SDSS-r (Schlafly etal. 2011) [mag] from NED
-
-Galactic Extinction SDSS-i (Schlafly etal. 2011) [mag]  -->  Galactic Extinction SDSS-i (Schlafly etal. 2011) [mag] from NED
-
-Galactic Extinction SDSS-z (Schlafly etal. 2011) [mag]  -->  Galactic Extinction SDSS-z (Schlafly etal. 2011) [mag] from NED
-
-Object type  -->  Object type from NED
-
-cz (km/s)  --> As indicated obtained from NED
-
-Redshift  -->  As indicated obtained from NED
-
-Redshift uncertainty   -->  As indicated obtained from NED
-
-Redshift quality flat  -->  As indicated obtained from NED
-
-quick look magnitude  -->  As indicated obtained from NED
-
-Major Diam (arcmin)  -->  As indicated obtained from NED
-
-Minor Diam (arcmin)  -->  As indicated obtained from NED
-
-Morph./Description  -->  As indicated obtained from NED
-
-Dist. Mod. Mean (mag)  -->  As indicated obtained from NED
-
-Metric Dist. Mean (kpc)  --> As indicated obtained from NED
-
-Row --> Just a number identifying the row.
-
-
-Once I have all this information (i.e. for each galaxy in amusing all the objects according to NED within a radius of 10'') I am going to decide the best designation (name) for each galaxy. For doing that I cross-check a table with the names and coordinates of the AMUSING galaxies and with the output from the NED query (the definitive names are in 'AMUSING_SAMPLE_definitive_names.txt'). For the hyperleda query I need names, that's why I do that.
-
 ## Hyperleda:
 
-And now I compile all the available information for the AMUSING sample of galaxies using hyperleda. In 'amusing_sample_char_updated.csv' I join such table (all the information from hyperleda) with the initial table (original names and coordinates of the AMUSING sample). In addition, just to compare if what hyperleda and myself have done is correct, I compute the difference (in arcsecs) between the position (RA and DEC) of the original targets and the sources for which I have information. All the columns are as follows:
+In this table I compile all the available information for the AMUSING sample of galaxies using hyperleda. All the columns are as follows:
 
 Amusing Name --> The name according to the original AMUSING table
 
-RA_amusing --> RA according to the original AMUSING table
+redshift_amusing --> redshift according to the original AMUSING table
 
-DEC_amusing --> DEC according to the original AMUSING table
-
-RA_degrees_amusing --> RA according to the original AMUSING table (degrees)
-
-DEC_degrees_amusing --> DEC according to the original AMUSING table (degrees)
-
-zz_amusing --> redshift according to the original AMUSING table
-
-def_name --> definitive name (as explained before)
+def_name --> most common name
 
 SN_name --> Name of the SN linked to this obeject
 
-pgc --> PGC designation (according to hyperleda)
+SN_type --> SN type
 
-hyperleda_name --> Hyperleda name
+pgc -->  Hyperleda internal number
 
-other_names(pgc) --> Other designations
+hl_names(pgc) --> 	list of all names
 
-objtype --> type of object 
+objtype --> 	type of object
 
-RA_hours_hyperleda --> RA according to hyperleda (hours)
+al1950	 --> RA 1950 (hours decimal value)
 
-RA_degrees_hyperleda --> RA according to hyperleda (degrees)
+de1950 --> 	DEC 1950 (degrees decimal value)
 
-DEC_degrees_hyperleda --> DEC according to hyperleda (degrees)
+celposb(pgc) --> 	B1950 position (character string)
 
-Delta_RA(arcsec) --> (RA_degrees_amusing - RA_degrees_hyperleda)*360.0
+al2000 --> 	RA 2000 (hours decimal value)
 
-Delta_dec(arcsec) --> (DEC_degrees_amusing - DEC_degrees_hyperleda)*360.0
+de2000 --> 	DEC 2000 (degrees decimal value)
 
-l2 --> galactic longitude (degrees) 
+celposj(pgc) --> 	J2000 position (character string)
 
-b2 --> galactic latitude (degrees) 
+l2	 --> galactic longitude (degrees)
 
-type --> morphological type 
+b2	 --> galactic latitude (degrees)
 
-bar --> bar (B or blank) 
+sgl --> 	supergalactic longitude (degrees)
 
-ring --> ring (R or blank) 
+sgb --> 	supergalactic latitude (degrees)
 
-compactness --> Compactness (C=Compact or D=Diffuse or blank ) 
+f_astrom --> 	Precision flag on the celestial position
 
-t --> morphological type code 
+type	 --> morphological type
 
-e_t --> actual error on t 
+bar	 --> bar (B or blank)
 
-logd25 --> log10 of apparent diameter (d25 in 0.1') 
+ring	 --> ring (R or blank)
 
-e_logd25 --> actual error on logd25 
+multiple --> 	multiple (M or blank)
 
-logr25 --> 	log10 of axis ratio (major axis/minor axis) 
+compactness --> 	Compactness (C=Compact or D=Diffuse or blank )
 
-e_logr25 --> actual error on logr25 
+t --> 	morphological type code
 
-pa --> major axis position angle (North Eastwards) in degrees 
+e_t --> 	actual error on t
 
-brief --> 	mean effective surface brightness (mag.arcsec-2) 
+lc	 --> luminosity class code
 
-e_brief --> actual error on brief 
+e_lc	 --> actual error on lc
 
-bt --> 	total B-magnitude 
+logd25	 --> log10 of apparent diameter (d25 in 0.1')
 
-e_bt --> actual error on bt 
+e_logd25 --> 	actual error on logd25
 
-it --> total I-magnitude 
+logr25	 --> log10 of axis ratio (major axis/minor axis)
 
-e_it --> actual error on it 
+e_logr25 --> 	actual error on logr25
 
-ubt --> total U-B color 
+pa --> 	major axis position angle (North Eastwards) in degrees
 
-bvt --> total B-V color 
+brief --> 	mean effective surface brightness (mag.arcsec-2)
 
-vmaxg --> Apparent maximum rotation velocity of gas 
+e_brief --> 	actual error on brief
 
-e_vmaxg --> actual error on vmaxg 
+bt	 --> total B-magnitude
 
-vmaxs --> Apparent maximum rotation velocity of stars 
+e_bt --> 	actual error on bt
 
-e_vmaxs --> actual error on vmaxs 
+it	 --> total I-magnitude
 
-vdis --> Central velocity dispersion (in km/s) 
+e_it --> 	actual error on it
 
-e_vdis --> actual error on vdis 
+ubt --> 	total U-B color
 
-m21 --> 21-cm line flux in magnitude (see definition in text) 
+bvt --> 	total B-V color
 
-e_m21 --> actual error on m21 
+ube --> 	effective U-B color
 
-vrad --> heliocentric radial velocity from radio measurement (in km/s) 
+bve --> 	effective B-V color
 
-e_vrad --> actual error on vrad 
+vmaxg --> 	Apparent maximum rotation velocity of gas
 
-v --> mean heliocentric radial velocity (in km/s) 
+e_vmaxg	 --> actual error on vmaxg
 
-e_v --> actual error on v 
+vmaxs	 --> Apparent maximum rotation velocity of stars
 
-ag --> Galactic extinction in B magnitude 
+e_vmaxs	 --> actual error on vmaxs
 
-ai --> extinction due to inclination in B magnitude (see text) 
+vdis	 --> Central velocity dispersion (in km/s)
 
-incl --> inclination between line of sight and polar axis (in degrees) 
+e_vdis	 --> actual error on vdis
 
-btc --> total apparent corrected B-magnitude 
+mg2 --> 	Central Mg2 Lick index (in mag)
 
-ubtc --> total apparent corrected U-B color 
+e_mg2 --> 	actual error on mg2
 
-bvtc --> total apparent corrected B-V color 
+m21	 --> 21-cm line flux in magnitude (see definition in text)
 
-bri25 --> mean surface brightness within isophote 25 (mag.arcsec-2) 
+e_m21 --> 	actual error on m21
 
-vrot --> maximum velocity rotation (in km/s) 
+mfir	 --> far infrared magnitude (see definition in text)
 
-e_vrot --> actual error on vrot 
+vrad --> 	heliocentric radial velocity from radio measurement (in km/s)
 
-modz --> redshift distance modulus 
+e_vrad --> 	actual error on vrad
 
-mod0 --> true distance modulus (from parameters) 
+vopt --> 	heliocentric radial velocity from optical measurement (in km/s)
 
-mabs --> absolute B-magnitude 
+e_vopt	 --> actual error on vopt
+
+v	 --> mean heliocentric radial velocity (in km/s)
+
+e_v --> 	actual error on v
+
+ag	 --> Galactic extinction in B magnitude
+
+ai	 --> extinction due to inclination in B magnitude (see text)
+
+incl --> 	inclination between line of sight and polar axis (in degrees)
+
+a21	 --> 21-cm self absorption in magnitude
+
+lambda --> 	luminosity index
+
+logdc --> 	log10 of apparent corrected diameter (dc in 0.1')
+
+btc	 --> total apparent corrected B-magnitude
+
+ubtc --> 	total apparent corrected U-B color
+
+bvtc	 --> total apparent corrected B-V color
+
+bri25 --> 	mean surface brightness within isophote 25 (mag.arcsec-2)
+
+vrot	 --> maximum velocity rotation (in km/s)
+
+e_vrot --> 	actual error on vrot
+
+m21c --> 	corrected 21-cm line flux in magnitude (see text)
+
+hic	 --> 21-cm index bt-m21c in magnitude
+
+vlg	 --> radial velocity with respect to the Local Group (km/s)
+
+vgsr --> 	radial velocity with respect to the GSR (km/s)
+
+vvir --> 	radial velocity corrected for Virgocentric infall (km/s)
+
+v3k	 --> radial velocity with respect to the CMB radiation (km/s)
+
+modz	 --> redshift distance modulus
+
+mod0	 --> true distance modulus (from parameters)
+
+mabs	 --> absolute B-magnitude 
+
+Pointings --> Number of pointings MUSE data
+
+RA_pointing --> RA of the different pointings
+
+DEC_pointing --> DEC of the different pointings
+
+RA_SN --> RA of the different SNs
+
+DEC_SN --> DEC of the different SNs
+
+Source --> program or source from where the data come from
+
+RA_DSS --> RA of the central point in the DSS images
+
+DEC_DSS --> DEC of the central point in the DSS images
+
+offset_RA --> Distance (in arcsec and RA) from the SN to the centre of the galaxy (coords_SN - coords_gal)
+
+offset_DEC --> Distance (in arcsec and DEC) from the SN to the centre of the galaxy (coords_SN - coords_gal)
+
+
+
 
 
 ****************************************************
 # Virtual Observatory
 ****************************************************
 
-Although all this information might be important to characterise the AMUSING sample, in my case (and I guess that this applies to everyone) having optical images to see how they look like and play with the data (obtain surface brightness profiles, ellipticity and position angle of the disc, etc.) is crucial.
+Although all this information might be important to characterise the AMUSING sample, having optical images to see how they look like and to play with the data (obtain surface brightness profiles, ellipticity and position angle of the disc, etc.) is crucial.
+
+## Carnegie-Irvine survey
+
+Some of the galaxies are also part of the Carnegie-Irvine Survey (https://cgs.obs.carnegiescience.edu/CGS/Home.html). All the information from that survey (analysis of the light distribution, masses, colour profiles, etc etc...) can be downloaded for those galaxies in the survey's webpage (https://cgs.obs.carnegiescience.edu/CGS/Home.html).
+
+## DSS
+
+I have downloaded all the fits files for the galaxies in the AMUSING sample using the red bands with two different fields of view (5'x5' and 15'x15'). With all these data we can further characterise the sample. I have created also some png files (see folder named 'images') for a quicker visualization of the galaxies.
 
 ## SDSS
 
  I cross-check the AMUSING sample with SDSS database and I obtain 20 galaxies in common. I download colour images for visualization purposes. To download photometric and spectroscopic data use SDSS_query.py.
 
-## Carnegie-Irvine survey
 
- I did the same with the sample from the Carnegie-Irvine survey (https://cgs.obs.carnegiescience.edu/CGS/Home.html). The AMUSING sample and this survey have 12 galaxies in common. All the information from that survey (analysis of the light distribution, masses, colour profiles, etc etc...) can be downloaded for those galaxies in the survey's webpage.
 
-## DSS
 
- I have downloaded all the fits files for the 197 galaxies in AMUSING using the red bands (I am having problems downloading the blue bands, in DSS_query.py replace 'red' by 'blue' and change the size if needed, by changing the input table you can also centre the objects in the fits files) with two different fields of view (5'x5' and 15'x15'). With all these data we can further characterise the sample. I have created also some png files (see folder named images) for a quicker visualization of the galaxies.
