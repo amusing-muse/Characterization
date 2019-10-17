@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 #Amusing_Name,redshift_amusing,def_name,SN_name,SN_type,pgc,hl_names(pgc),objtype,al1950,de1950,celposb(pgc),al2000,de2000,celposj(pgc),l2,b2,sgl,sgb,f_astrom,type,bar,ring,multiple,compactness,t,e_t,logd25,e_logd25,logr25,e_logr25,pa,brief,e_brief,ut,e_ut,bt,e_bt,vt,e_vt,it,e_it,kt,e_kt,ube,bve,vmaxg,e_vmaxg,vmaxs,e_vmaxs,vdis,e_vdis,mg2,e_mg2,m21,e_m21,mfir,vrad,e_vrad,vopt,e_vopt,v,e_v,ag,ai,incl,a21,logdc,btc,ubtc,bvtc,bri25,vrot,e_vrot,m21c,hic,vlg,vgsr,vvir,v3k,modz,e_modz,mod0,e_mod0,modbest,e_modbest,mabs,e_mabs,Pointings,RA_pointing,DEC_pointing,RA_SN,DEC_SN,Source,RA_DSS,DEC_DSS,offset_RA,offset_DEC
 M-02-01-14,0.038329,MCG-02-01-014,SN2008hj,Ia,282,2MASXJ00040151-1110275/6dFJ0004015-111027/MCG-02-01-014/PGC000282,G,0.0244192,-11.4526252,B000127.9-112709,0.0670872,-11.174213,J000401.5-111027,85.715967,-70.5384479,282.0791961,8.9702545,0,Sa,,R,,,1.3,1.3,0.951,0.047,0.091,0.027,,,,,,14.925,0.372,,,13.6,0.081,12.49,0.145,,,,,,,,,,,,,,,,11360.0,39.0,11360.0,39.0,0.155,0.096,38.02,0.02,0.962,14.532,,,23.306,,,,,11485.0,11430.7,11278.6,11017.6,36.089,0.096,,,36.089,0.096,-21.557,0.384,1.0,00:04:01,-11:10:24,00:04:02,-11:10:08,P95,00:04:01.51,-11:10:27.17,7.291199999999964,19.166800000000705
 NGC191A,0.020417,NGC191A,SN2006ej,Ia,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0,00:38:57,-9:02:14,00:39:00,-9:00:57,P95,00:39:00,-9:00:57,--,--
